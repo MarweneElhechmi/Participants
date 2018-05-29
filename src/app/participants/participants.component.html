@@ -1,0 +1,24 @@
+
+<div class="card">
+    <div class="card-header bg-primary">
+      <h2>Liste des Participants</h2>
+    </div>
+    <div class="card-body">
+     <table class="table table-bordred table-striped">
+       <thead>
+         <tr>
+           <th>Numéro</th>
+           <th>Nom</th>
+           <th>Age</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor=" let p of participants">
+           <td>{{p.numero}}</td>
+           <td>{{p.nom}}</td>
+           <td>{{p.age}}</td>
+         </tr>
+       </tbody>
+     </table>
+    </div>
+  </div>
