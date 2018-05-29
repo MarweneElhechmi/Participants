@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Participants } from '../domain/participants';
+import { ParticipantsService } from '../services/participants.service';
 
 @Component({
   selector: 'app-participants',
@@ -11,23 +12,10 @@ export class ParticipantsComponent implements OnInit {
   participants: Participants[];
 
 
-  constructor() { }
+  constructor(private _particpatsService: ParticipantsService) { }
 
   ngOnInit() {
-    this.participants = [
-      {'numero':'P100',
-       'nom': 'Sami',
-       'age' : 25
-      },
-      {'numero':'P100',
-      'nom': 'ghada',
-      'age' : 25
-     },
-     {'numero':'P100',
-     'nom': 'Marwene',
-     'age' : 25
-    }
-    ];
+    this.participants = this._particpatsService.getAll();
 
   }
 
